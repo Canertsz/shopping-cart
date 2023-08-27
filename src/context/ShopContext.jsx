@@ -33,7 +33,6 @@ export default function ShopContextProvider({ children }) {
     }
 
     const contextValue = {cartItems, setCartItems, addToCart, removeFromCart}
-    console.log(cartItems)
 
     return (
         <ShopContext.Provider value={contextValue}>
