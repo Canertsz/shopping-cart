@@ -4,6 +4,8 @@ import Shop from "./pages/shop/Shop.jsx";
 import Cart from "./pages/cart/Cart.jsx";
 import ShopContextProvider from "./context/ShopContext.jsx";
 
+//TODO add amount badge to the shopping cart icon
+
 function App() {
     return (
         <ShopContextProvider>
