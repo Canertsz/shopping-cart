@@ -3,21 +3,20 @@ import { ShopContext } from "../../context/ShopContext.js"
 import { PRODUCTS } from "../../products.js"
 import { motion } from "framer-motion"
 import CartItem from "./CartItem.jsx"
-import { CartType, Product, ShopContextValue } from "../../../types.ts"
+import { ShopContextValue } from "../../types.ts"
 
 export default function Cart() {
-  
-const shopContext = useContext<ShopContextValue | null>(ShopContext)
+  const shopContext = useContext<ShopContextValue | null>(ShopContext)
 
-if (!shopContext) {
-  throw new Error("ShopContext is not available")
-}
+  if (!shopContext) {
+    throw new Error("ShopContext is not available")
+  }
 
-const { cartItems, getTotalAmount } = shopContext
+  const { cartItems, getTotalAmount } = shopContext
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <div className="grid place-items-center my-16 text-4xl font-bold">
+      <div className="my-16 grid place-items-center text-4xl font-bold">
         Your cart items
       </div>
       <div className="flex flex-col items-center">
@@ -28,11 +27,11 @@ const { cartItems, getTotalAmount } = shopContext
         })}
       </div>
       {getTotalAmount() > 0 ? (
-        <div className="flex justify-center my-8 text-lg font-medium">
+        <div className="my-8 flex justify-center text-lg font-medium">
           subtotal: ${getTotalAmount()}
         </div>
       ) : (
-        <div className="grid place-items-center mt-60 font-medium text-xl">
+        <div className="mt-60 grid place-items-center text-xl font-medium">
           you didn't add any product to your cart, go back and grab one!
         </div>
       )}

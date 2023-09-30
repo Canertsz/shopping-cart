@@ -1,6 +1,12 @@
 import React, { useContext } from "react"
 import { ShopContext } from "../context/ShopContext.jsx"
 import { motion } from "framer-motion"
+import { ProductType } from "../types.js"
+
+type ProductProps = {
+  data: ProductType
+  key: number
+}
 
 const item = {
   hidden: {
@@ -13,15 +19,22 @@ const item = {
   },
 }
 
-export default function Product(props) {
+export default function Product(props: ProductProps): JSX.Element {
   const { id, name, price, productImage } = props.data
-  const { cartItems, addToCart } = useContext(ShopContext)
+
+  const shopContext = useContext(ShopContext)
+
+  if (!shopContext) {
+    throw new Error("ShopContext is not available")
+  }
+
+  const { cartItems, addToCart } = shopContext
 
   const cartItemAmount = cartItems[id]
 
   return (
     <motion.div
-      className="flex flex-col items-center my-6"
+      className="my-6 flex flex-col items-center"
       variants={item}
       initial="hidden"
       animate="visible"
@@ -31,8 +44,8 @@ export default function Product(props) {
       <span className="mt-2">${price}</span>
       <button
         onClick={() => addToCart(id)}
-        className={`w-28 mt-3 border-2 p-1 rounded-full border-black text-sm 
-                hover:bg-black hover:text-white transition-all`}
+        className={`mt-3 w-28 rounded-full border-2 border-black p-1 text-sm 
+                transition-all hover:bg-black hover:text-white`}
       >
         add to cart {cartItemAmount > 0 && <>({cartItemAmount})</>}
       </button>

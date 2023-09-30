@@ -2,10 +2,10 @@ import React, { createContext, useState, ReactNode } from "react"
 import { PRODUCTS } from "../products.js"
 import {
   CartType,
-  Product,
+  ProductType,
   ShopContextValue,
   ShopContextProviderProps,
-} from "../../types.ts"
+} from "../types.ts"
 
 export const ShopContext = createContext<ShopContextValue | null>(null)
 
@@ -55,7 +55,7 @@ export default function ShopContextProvider({
     let totalAmount = 0
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
-        let itemInfo: Product | undefined = PRODUCTS.find(
+        let itemInfo: ProductType | undefined = PRODUCTS.find(
           (product) => product.id === Number(item),
         )
         if (itemInfo) {

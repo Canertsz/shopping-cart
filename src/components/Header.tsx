@@ -15,8 +15,8 @@ export default function Header() {
   })
 
   return (
-    <div className="bg-black text-white flex items-center justify-between h-20">
-      <Link to="/" className="text-3xl font-bold ml-10 md:text-2xl">
+    <div className="flex h-20 items-center justify-between bg-black text-white">
+      <Link to="/" className="ml-10 text-3xl font-bold md:text-2xl">
         PhosphorShop
       </Link>
       <div className="relative">
@@ -28,7 +28,7 @@ export default function Header() {
               className="mr-10"
             />
             {getTotalItemAmount() !== 0 && (
-              <div className="absolute w-4 h-4 rounded-full bg-[#ff2921] text-[11px] text-center top-0 right-8">
+              <div className="absolute right-8 top-0 h-4 w-4 rounded-full bg-[#ff2921] text-center text-[11px]">
                 {getTotalItemAmount()}
               </div>
             )}

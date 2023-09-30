@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 export default function Shop() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <div className="grid text-7xl font-black place-items-center my-20 md:my-10 md:text-5xl md:mx-10 text-center">
+      <div className="my-20 grid place-items-center text-center text-7xl font-black md:mx-10 md:my-10 md:text-5xl">
         Phosphor Shop
       </div>
       <div className="grid grid-cols-3 place-items-center md:grid-cols-1">

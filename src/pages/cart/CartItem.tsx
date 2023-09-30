@@ -1,13 +1,12 @@
 import React, { useContext } from "react"
 import { ShopContext } from "../../context/ShopContext.js"
-import { Product, ShopContextValue } from "../../../types.ts"
+import { ProductType, ShopContextValue } from "../../types.ts"
 
 type CartItemProps = {
-  product: Product
+  product: ProductType
 }
 
 export default function CartItem({ product }: CartItemProps) {
-
   const shopContext = useContext<ShopContextValue | null>(ShopContext)
 
   if (!shopContext) {
@@ -17,7 +16,7 @@ export default function CartItem({ product }: CartItemProps) {
   const { cartItems, addToCart, removeFromCart } = shopContext
 
   return (
-    <div className="flex border rounded-md mt-8 first:mt-0 w-[700px] md:w-[300px] md:flex-col md:items-center">
+    <div className="mt-8 flex w-[700px] rounded-md border first:mt-0 md:w-[300px] md:flex-col md:items-center">
       <div>
         <img
           className="max-w-none md:w-[250px]"
@@ -26,16 +25,16 @@ export default function CartItem({ product }: CartItemProps) {
           width="300"
         />
       </div>
-      <div className="flex flex-col ml-4 mr-20 justify-evenly md:items-center md:m-0 gap-y-2">
-        <span className="text-4xl md:text-3xl font-semibold md:text-center">
+      <div className="ml-4 mr-20 flex flex-col justify-evenly gap-y-2 md:m-0 md:items-center">
+        <span className="text-4xl font-semibold md:text-center md:text-3xl">
           {product.name}
         </span>
-        <span className="text-2xl md:text-xl font-normal">
+        <span className="text-2xl font-normal md:text-xl">
           price: ${product.price}
         </span>
         <div className="md:mb-4">
           <button
-            className="bg-black text-white px-2 rounded-l-md"
+            className="rounded-l-md bg-black px-2 text-white"
             onClick={() => addToCart(product.id)}
           >
             +
@@ -44,7 +43,7 @@ export default function CartItem({ product }: CartItemProps) {
             {cartItems[product.id]}
           </span>
           <button
-            className="bg-black text-white px-2 rounded-r-md"
+            className="rounded-r-md bg-black px-2 text-white"
             onClick={() => removeFromCart(product.id)}
           >
             -
