@@ -4,6 +4,9 @@
 - Eslint v8.45.0
 - Prettier v3.0.3
 - Tailwind v3.3.3
+- React Responsive v9.0.2
+- Phosphor React v1.4.1 
+- Framer Motion v10.16.1
 - Vite v4.4.5
 
 ![Screenshot 2023-09-30 at 10 07 10](https://github.com/Canertsz/shopping-cart/assets/64376593/24011e05-4500-4dda-8bb8-3df2bce3e704)
