@@ -1,8 +1,11 @@
-# React + Vite
+- TypeScript v5.2.2
+- React v18.2.0
+- React Router Dom v6.15.0
+- Eslint v8.45.0
+- Prettier v3.0.3
+- Tailwind v3.3.3
+- Vite v4.4.5
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Screenshot 2023-09-30 at 10 07 10](https://github.com/Canertsz/shopping-cart/assets/64376593/24011e05-4500-4dda-8bb8-3df2bce3e704)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot 2023-09-30 at 10 08 21](https://github.com/Canertsz/shopping-cart/assets/64376593/9bcd92ac-812d-49bc-ae3d-e33e51889ade)
